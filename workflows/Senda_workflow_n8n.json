@@ -1,0 +1,3347 @@
+{
+  "name": "Tala calendary",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8cafcd0e-cf50-48fc-b637-6a61c0ba9024",
+              "name": "from_id",
+              "value": "={{ $json.body.data.key.remoteJidAlt.includes('@lid')?$json.body.data.key.remoteJid:$json.body.data.key.remoteJidAlt }}",
+              "type": "string"
+            },
+            {
+              "id": "31eb834d-9fd6-4bf8-bee8-c6428912700b",
+              "name": "message_text",
+              "value": "={{ $json.body.data.message.conversation??$json.body.data.message.ephemeralMessage.message.extendedTextMessage.text }}",
+              "type": "string"
+            },
+            {
+              "id": "a73a4dfa-ce75-44ec-a7df-21f551f44d20",
+              "name": "date_time",
+              "value": "={{ $json.body.date_time }}",
+              "type": "string"
+            },
+            {
+              "id": "b7db5550-7223-4457-af92-37a487770c6e",
+              "name": "messageType",
+              "value": "={{ $json.body.data.messageType }}",
+              "type": "string"
+            },
+            {
+              "id": "bb33f615-b7c4-42f9-acae-90eaaec5bbb2",
+              "name": "message_id",
+              "value": "={{ $json.body.data.key.id }}",
+              "type": "string"
+            },
+            {
+              "id": "bfa26aaf-bd70-4176-aedc-472e31e08e5c",
+              "name": "number",
+              "value": "={{ $json.body.data.key.remoteJidAlt.includes('@lid')?$json.body.data.key.remoteJid.split('@')[0]:$json.body.data.key.remoteJidAlt.split('@')[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "d32db9f6-1151-4c8c-9706-3bcd45d43168",
+              "name": "remoteJidAlt",
+              "value": "={{ $json.body.data.key.remoteJidAlt.split('@')[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "4be8a3eb-8fc2-4d34-8c94-b31c423ad726",
+              "name": "url",
+              "value": "http://168.231.69.210:8080/message/sendText/beland",
+              "type": "string"
+            },
+            {
+              "id": "42c77d6d-79ee-409e-bd54-f03f25bb2faa",
+              "name": "quotedMessage",
+              "value": "={{ $json.body.data.contextInfo.quotedMessage.conversation }}",
+              "type": "string"
+            },
+            {
+              "id": "f3d1b9bc-0a21-4ca4-8892-f90e745e2546",
+              "name": "instance",
+              "value": "={{ $json.body.instance }}",
+              "type": "string"
+            },
+            {
+              "id": "e36e7040-363b-4b10-9d26-fd3b241b8289",
+              "name": "reactionMessage",
+              "value": "={{ $json.body.data.message.reactionMessage.text }}",
+              "type": "string"
+            },
+            {
+              "id": "1277d3c1-066f-450d-8c03-d0524a06409e",
+              "name": "participant",
+              "value": "={{ $json.body.data.key.participant }}",
+              "type": "string"
+            },
+            {
+              "id": "f762aa16-35cf-410a-8282-f3c87dd3d9c5",
+              "name": "caption",
+              "value": "={{ $json.body.data.message.imageMessage.caption }}",
+              "type": "string"
+            },
+            {
+              "id": "f8df1967-5468-4b82-a8ea-977188ce6aec",
+              "name": "chatwootConversationId",
+              "value": "={{ $json.body.data.chatwootConversationId }}",
+              "type": "number"
+            },
+            {
+              "id": "2418bec2-7456-4053-b329-b65214f0ccf9",
+              "name": "fromMe",
+              "value": "={{ $json.body.data.key.fromMe }}",
+              "type": "boolean"
+            },
+            {
+              "id": "e20205b2-4e8d-4b74-bfd6-aa6072e79614",
+              "name": "chatwoot_id",
+              "value": "={{ $json.body.data.chatwootInboxId }}",
+              "type": "string"
+            },
+            {
+              "id": "59882fbd-2309-4cc9-abda-7569a193b911",
+              "name": "message_id",
+              "value": "={{ $json.body.data.key.id }}",
+              "type": "string"
+            },
+            {
+              "id": "d7600789-96ea-4af3-8f55-bb92e6929632",
+              "name": "chatwoot",
+              "value": "https://chat.grova.mx",
+              "type": "string"
+            },
+            {
+              "id": "0e4c4981-f6c2-4a2e-bd68-120bd0c82939",
+              "name": "calendary",
+              "value": "https://calendary.grova.mx",
+              "type": "string"
+            },
+            {
+              "id": "9605259a-0ae3-49c4-ace1-91ef7922555f",
+              "name": "commerce_id",
+              "value": 15,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -9264,
+        1376
+      ],
+      "id": "3bbe776a-5d07-4a71-8812-d9ed4d71dfb9",
+      "name": "data_fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0ccce670-512c-4ba7-ac1b-0a5c1ad2358f",
+              "name": "final_message",
+              "value": "={{ $('data_fields').item.json.message_text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1728,
+        640
+      ],
+      "id": "1db8329a-22af-4d74-8fde-06ce4eb6c268",
+      "name": "final_message_text"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3d8f6216-2f39-44eb-973f-1e896d4fe69a",
+              "name": "final_message",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1088,
+        1712
+      ],
+      "id": "0aa48381-fb1d-46bf-b9d0-d74efb52be76",
+      "name": "final_message_voice"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "message",
+        "key": "={{ $('data_fields').item.json.from_id.toString().split(\"@\")[0].toJsonString() }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        16,
+        1472
+      ],
+      "id": "0dbbf4d5-31d7-4575-8e8c-f19a9f4dbfd0",
+      "name": "Get_buffer_data",
+      "credentials": {
+        "redis": {
+          "id": "BDWSXE9gvz0lHik6",
+          "name": "Redis account n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('data_fields').item.json.from_id.toString().split(\"@\")[0].toJsonString() }}",
+        "messageData": "={{ JSON.stringify({\n'message':$json.final_message ,\n'sessionId':$('data_fields').item.json.from_id.toString(),\n'date_time':$('data_fields').item.json.date_time,\n'url':$('data_fields').item.json.url,\n'plataform':'whatsapp'\n}) }}",
+        "tail": true
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        1488
+      ],
+      "id": "3d528a57-0c43-4d22-8f39-e7a5bb161bc1",
+      "name": "Buffer",
+      "credentials": {
+        "redis": {
+          "id": "BDWSXE9gvz0lHik6",
+          "name": "Redis account n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/audio/transcriptions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "whisper-large-v3"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "=file",
+              "inputDataFieldName": "=data"
+            },
+            {
+              "name": "temperature",
+              "value": "0"
+            },
+            {
+              "name": "prompt",
+              "value": "transcribe el audio a texto lo mas fiel posible en español"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1648,
+        1904
+      ],
+      "id": "e5529c8d-8b0f-41df-8358-e76cc0baf035",
+      "name": "trascription_audio_to_text"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -240,
+        1488
+      ],
+      "id": "7690ecde-b9e5-4d4b-9b3c-40f051121be5",
+      "name": "Wait",
+      "webhookId": "44fe84ce-ce6f-4172-b090-2c3d3440b011"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.concat_message }}",
+        "options": {
+          "systemMessage": "=# 🤖 Asistente Virtual Tala Spa\n\nEres el **asistente oficial de Tala Beauty & Body**, especializado en:\n- Atender pacientes por WhatsApp 💬  \n- Brindar información **verificada** sobre **servicios, productos y categorías**  \n- **Agendar, reprogramar o cancelar citas**\n\nTu tono es **profesional, amable y empático**, con un toque **femenino y cálido**, pero siempre **conciso** (máximo 3 líneas).  \nUsa un lenguaje **natural, cercano y humano**, evitando tecnicismos o respuestas planas.\n\n⚠️ **Prohibido inventar información.**  \nSolo puedes responder con datos **provenientes de los tools** o del contexto del paciente.  \nSi no hay información suficiente, responde de forma educada y pide más detalles.\n\n---\n\n**Fecha actual:** {{ $now }}  \n**Zona horaria:** America/Mexico_City (UTC-6)  \n**Nombre del contacto:** {{ $json.name }}  \n**Número telefónico:** {{ $json.number }}\n\n---\n\n## 🎯 OBJETIVO PRINCIPAL\n\nTu función es guiar al paciente de forma automática para:\n1. Mostrar categorías, servicios o productos disponibles 🩺  \n2. Identificar o crear el paciente según su teléfono 📞  \n3. Verificar disponibilidad de citas 📅  \n4. Crear, modificar o cancelar citas 💆‍♀️  \n5. Redirigir conversaciones humanas o promociones 🔄  \n\n---\n\n## 💬 SALUDO INICIAL\n\n> ¡Hola! 👋 Soy el asistente virtual de Tala Beauty & Body 🌿✨\n> Dentro de mis funciones es Agendar, Modificar, Cancelar Citas y dar información de los servicios 💆‍♀️  \n> Si requieres de atencion personalizada o un agente humano, solicitalo o escribe la palabra \"humano\"\n> ¿en que te puedo ayudar?\n\n---\n\n## 🧠 MEMORIA Y CONTEXTO\n\nGuarda en memoria estos valores:\n- `patient_id`\n- `service_id`\n- `category_id`\n- `product_id`\n- `start_at` (fecha y hora)\n- `phone`\n\nSi hay varios pacientes con el mismo número, solicita el **nombre completo** antes de continuar.  \nSi no existe, pide nombre y apellidos para crear el registro.  \n✅ **Si ya tienes `patient_id`, no vuelvas a preguntar “a nombre de quién” está la cita.**\n\n---\n\n## 🩺 FLUJO DE CONVERSACIÓN\n\n### 🔹 1. Categorías y Servicios\n\n**Cuándo usar:**\n- Cuando el usuario pregunta por servicios o tratamientos, ej. “¿Qué tratamientos tienen?”, “faciales”, “botox”, etc.\n\n**Herramientas:**\n- `get_categories`\n- `services_by_category`\n- `service_by_name`\n\n**Reglas:**\n- Si pide “servicios” o “tratamientos” sin especificar → usa `get_categories`.\n- Si menciona una categoría → usa `services_by_category`.\n- Si menciona un tratamiento específico → usa `service_by_name`.\n\n---\n\n### 💎 Formato de respuesta (categorías, servicios y horarios)\n\n- Siempre usa **una línea por elemento**, no los separes con “·”.\n- Deja **una línea en blanco** después de la introducción y al final del mensaje.\n- Usa **emojis suaves y consistentes**:\n  - 🌿 para categorías  \n  - 💆‍♀️ para servicios  \n  - 🕒 para horarios disponibles\n- Mantén el tono **natural, cálido y femenino**, evitando respuestas planas.\n\n---\n\n#### 🌸 Ejemplo de categorías:\n\n> ¡Hola {{ $json.name }}! 👋  \n> En Tala Beauty & Body contamos con estas categorías de tratamientos 🌿:  \n>  \n> 🌿 Bótox  \n> 🌿 Tratamientos faciales  \n> 🌿 Peeling  \n> 🌿 Hilos  \n> 🌿 Aparatología  \n> 🌿 Rellenos con ácido hialurónico  \n> 🌿 Consulta inicial  \n> 🌿 Masajes postquirúrgicos  \n> 🌿 Peptonas  \n> 🌿 Células madre  \n> 🌿 Control de peso  \n> 🌿 Hidrolipoclasia  \n> 🌿 Enzimas PB Serum  \n> 🌿 Infiltración Kenalog  \n> 🌿 TOSKANI  \n> 🌿 Otros  \n>  \n> ¿Cuál te gustaría conocer a detalle o deseas agendar? 😊\n\n---\n\n#### 💆‍♀️ Ejemplo de servicios dentro de una categoría:\n\n> En la categoría **Aparatología**, tenemos disponibles los siguientes tratamientos 💆‍♀️:  \n>  \n> 💆‍♀️ Valoración aparatología  \n> 💆‍♀️ Presoterapia  \n> 💆‍♀️ Carboxiterapia  \n> 💆‍♀️ Ultrasonido  \n> 💆‍♀️ CM Slim 8 sesiones (1 área)  \n> 💆‍♀️ Lipolux  \n> 💆‍♀️ Coolshaping corporal o papada  \n>  \n> ¿Cuál te gustaría agendar o conocer más a fondo? 💖\n\n---\n\n#### 🕒 Ejemplo de horarios disponibles:\n\n> Estos son los horarios que tengo disponibles para ese servicio 📅:  \n>  \n> 🕒 10:00 AM  \n> 🕒 11:30 AM  \n> 🕒 1:00 PM  \n> 🕒 3:30 PM  \n> 🕒 5:00 PM  \n>  \n> ¿Cuál te gustaría reservar? ✨\n\n---\n\n#### 💫 Ejemplo de servicio específico:\n\n> Perfecto 💕, tenemos disponible el tratamiento **{{ nombre_del_servicio }}**.  \n> ¿Deseas que te ayude a revisar fechas disponibles para agendar tu cita?\n\n---\n\n### 🔹 2. Productos\n\n**Cuándo usar:**\n- Si el usuario pregunta por cremas, sueros o cosméticos.\n\n**Herramienta:**\n- `get_products`\n\n**Reglas:**\n- No mostrar promociones.\n- Usa un tono suave y explicativo.\n\n**Ejemplo:**\n> Estos son algunos de los productos disponibles en la clínica 🧴:  \n>  \n> 🧴 Suero hidratante  \n> 🧴 Crema anti-edad  \n> 🧴 Protector solar dermatológico  \n>  \n> ¿Quieres que te recomiende alguno según tu tipo de piel? 💕  \n\n---\n\n### 🔹 3. Pacientes\n\n**Herramientas:**\n- `find_patient`\n- `create_patient`\n\n**Reglas:**\n1. Si no existe el paciente, solicita:\n   > ¿Podrías darme tu nombre y apellidos completos para registrarte, por favor? 🌸  \n2. Guarda el `patient_id` en memoria.  \n3. Antes de agendar una cita, verifica que el paciente exista.  \n\n---\n\n### 🔹 4. Disponibilidad y Citas\n\n**Herramientas:**\n- `availability_day`\n- `availability_service`\n- `availability_day_hour`\n- `availability_service_hour`\n- `find_appointments_patient`\n- `create_appointment`\n- `modify_appointment`\n- `cancel_appointment`\n\n**Mensajes amigables:**\n\n- Si ya tiene cita ese día:\n  > Ya tienes una cita registrada para ese horario 🗓️  \n  > ¿Deseas reprogramarla o agendar otro servicio?\n\n- Si el horario no está disponible:\n  > A esa hora ya no tenemos espacio 😕  \n  > Pero tengo disponibles {{ horarios }}. ¿Cuál prefieres?\n\n- Al crear cita:\n  > ¡Listo! 🎉 Tu cita quedó registrada para el {{ fecha }} a las {{ hora }}  \n  > Te esperamos en Tala Beauty & Body 💆‍♀️✨  \n\n- Si confirma algo ya registrado:\n  > Perfecto 😊 tu cita ya está registrada, ¡nos vemos pronto!\n\n---\n\n### 🔹 5. Atención personalizada o promociones\n\n**Herramientas:**\n- `atencion_personalizada`\n- `promociones`\n- `notificar`\n\n**Mensajes:**\n- Atención humana:  \n  > Claro 😊, te comunico con una especialista para atenderte personalmente 👩‍⚕️  \n- Promociones:  \n  > En un momento te comparto nuestras promociones y paquetes disponibles 🎁  \n\n---\n\n## 🆕 REGLA ACTUALIZADA (ATENCIÓN PERSONALIZADA)\n\n**Cuando un paciente solicite atención personalizada, requiera hablar con un humano o pida atención directa:**\n\n1. Ejecuta el nodo `atencion_personalizada`.  \n2. Luego ejecuta el nodo `notificar` con un mensaje que incluya AUTOMÁTICAMENTE:  \n   - El **número telefónico** guardado en memoria (`phone`).  \n   - El **nombre del contacto** (`name`).  \n3. El formato del mensaje enviado en `notificar` debe ser:  \n\"El paciente {{ name }} con número {{ phone }} está solicitando atención personalizada.\"\n\n---\n\n### 🔹 6. Direcciones o ubicación\n\nSi pregunta “¿dónde están?” o “cómo llego”:\n> mapa  \n\n(Esto activa el nodo que envía la ubicación automáticamente.)\n\n---\n\n### 🔹 7. Consultas ambiguas\n\nSi el mensaje no es claro:\n> ¿Deseas agendar una cita o solo conocer información sobre los tratamientos? 🤔  \n\n---\n\n## 🚫 RESTRICCIONES\n\n1. ❌ No inventes nombres, precios ni tratamientos.  \n2. ️⚠️ Muestra precios si te lo solicitan(si ekl precio es 0, muestra la cantidad de 3,000.00).  \n3. ⚠️ No crees citas sin `patient_id`.  \n4. ⚠️ Evita duplicar citas o traslapar horarios.  \n5. ⚠️ Verifica disponibilidad antes de confirmar.  \n6. ✅ No vuelvas a pedir el nombre si ya existe `patient_id`.  \n7. ✅ Si el paciente solo confirma, no vuelvas a crear cita.  \n9. ❌ No preguntes si desea recordatorio; ya está programado. Solo informa que se enviará 1 día y 1 hora antes.\n\n---\n\n## 💬 MENSAJE DE ERROR\n\n> Lo siento 😔, hubo un problema procesando tu solicitud.  \n> ¿Podrías intentar de nuevo o deseas que te contacte una persona?\n\n---\n\n## 🕐 FORMATO DE FECHAS Y HORAS\n\n- Fecha: `DD-MM-YYYY`  \n- Fecha y hora: `DD-MM-YYYY HH:mm`  \n- Zona horaria: México (UTC−6)\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1776,
+        1152
+      ],
+      "id": "e6f74483-223d-4bca-a209-76f6484d125c",
+      "name": "AI Agent",
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('data_fields').item.json.from_id.toString().split(\"@\")[0].toJsonString() }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        848,
+        1408
+      ],
+      "id": "ec816b68-238b-4942-abbe-1318e9cd4c83",
+      "name": "Redis",
+      "credentials": {
+        "redis": {
+          "id": "",
+          "name": "Redis account n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6406b055-16d6-4064-8bb9-7fd36cf03646",
+              "name": "concat_message",
+              "value": "={{ $json.message.map(item => JSON.parse(item).message).join(\"\\n\") }}",
+              "type": "string"
+            },
+            {
+              "id": "56dd29b5-3298-4cee-8293-7ac484d99eab",
+              "name": "sessionId",
+              "value": "={{ $('data_fields').item.json.from_id }}",
+              "type": "string"
+            },
+            {
+              "id": "c2d231da-8598-420f-8827-587da2c75d56",
+              "name": "etiquetas",
+              "value": "={{ $('etiquetas').item.json.etiquetas }}",
+              "type": "string"
+            },
+            {
+              "id": "5965021e-b066-46ec-bd38-7c6a6e74da0e",
+              "name": "name",
+              "value": "={{ $('datos_conversacion').item.json.meta.sender.name }}",
+              "type": "string"
+            },
+            {
+              "id": "d0306fc0-7144-4428-85b5-b99a548186a8",
+              "name": "etiquetas_contacto",
+              "value": "={{$('label_contacto').item.json.payload}}",
+              "type": "string"
+            },
+            {
+              "id": "6e123e09-de92-4723-821b-ccc056996316",
+              "name": "number",
+              "value": "={{ $('data_fields').item.json.number }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1312,
+        1152
+      ],
+      "id": "f8ab4604-feb5-438a-8f23-dd95f7eaac0c",
+      "name": "final_data"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5",
+          "mode": "list",
+          "cachedResultName": "gpt-5"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1392,
+        1424
+      ],
+      "id": "44fab54e-daa8-4a53-bf10-8daa98ff07da",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tala",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -9536,
+        1360
+      ],
+      "id": "207f6667-dd3b-4ad3-89ca-52f8f8f77fc8",
+      "name": "Webhook",
+      "webhookId": "13d6f22d-1323-40d9-b458-29a68b53dd66"
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "=data.base64",
+        "options": {
+          "mimeType": "audio/mp3"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -2128,
+        1808
+      ],
+      "id": "1dbdb195-8d4b-4b9a-9d2b-6f4e95d93d49",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3812730f-d429-48d2-a1d2-b889a89adac2",
+              "name": "output",
+              "value": "={{ $json.output.replaceAll(\"*\",\"-\").replaceAll(\"\\\"\",\"'\").replace(/\\\\n/g, '\\n')\n          .replace(/\\\\\\\\n/g, '\\n') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2304,
+        1008
+      ],
+      "id": "e1eaf138-8e9b-4ce4-acfb-3e5dfdfd435a",
+      "name": "message",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fa3bdd34-7328-4ce6-906a-7e1a17f3fe1d",
+              "leftValue": "={{ JSON.parse($('Get_buffer_data').item.json.message.first()).date_time }}",
+              "rightValue": "={{ $now.minus('15','seconds') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "afterOrEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        1472
+      ],
+      "id": "8a8e0484-b03f-4976-9e63-dbabce831092",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2f3122b8-462f-47fe-9e1e-e9d823313e6d",
+              "leftValue": "={{$('Get_buffer_data').item.json.message }}",
+              "rightValue": "",
+              "operator": {
+                "type": "array",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        1456
+      ],
+      "id": "8f29f8dd-b791-4c39-8f92-0306095a71f9",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0bf0e362-a21b-41fa-a6d5-f66469c6a214",
+              "leftValue": "={{ $('data_fields').item.json.number }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -4880,
+        1296
+      ],
+      "id": "601f3b22-3043-4931-9089-add7a8fddef5",
+      "name": "If2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3440,
+        896
+      ],
+      "id": "3ed9375e-abec-4502-8c24-fde18123255f",
+      "name": "Wait1",
+      "webhookId": "25188368-86ce-4937-89d3-66ee4f42e00e"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://gateway.grova.mx/message/sendLocation/{{ $('data_fields').item.json.instance }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "X/y8N8BPQX7Z0lQFcJAHMR7+RmFlSkWQQKd40fmTkLk="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"number\": \"{{ $('data_fields').item.json.number }}\",\n  \"name\": \"TALA - Beauty & Body - Oaxaca\",\n  \"address\": \"Segunda Cda. de Emilio Carranza 105, Reforma, 68050 Oaxaca de Juárez, Oax.\",\n  \"latitude\": 17.08034,\n  \"longitude\": -96.714697,\n  \"delay\": 123,\n  \"linkPreview\": true,\n  \"mentionsEveryOne\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4064,
+        656
+      ],
+      "id": "3097bc20-b3a4-432d-909d-efcf90cba7ec",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "068c52a2-a496-4c19-a00e-f733e7d2ce4b",
+              "leftValue": "={{ $('message').item.json.output }}",
+              "rightValue": "mapa",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3664,
+        896
+      ],
+      "id": "9b73c611-594d-4cd3-a06a-da2fa8f99e12",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "conversation",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "494f6371-c29d-451e-b003-13d6250ebbbf"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b31316b3-bae5-4566-80a8-53d91c1715c8",
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "ephemeralMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ephemeralMessage"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c8957db0-adfe-473a-ad91-91e3f2d184ee",
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "audioMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "audio"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e5d44efc-e179-46a2-a18c-0c2b7cddaebd",
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "imageMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "image"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "be67cd05-5276-4c63-932e-0aa16d864f27",
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "reactionMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "reacction"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fa61b770-5977-4d3e-8889-ced9bf5e1f70",
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "imageMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "imageMessage"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1d09d5cd-4a5d-4dd8-b6a3-040bc9b7e910",
+                    "leftValue": "={{ $('data_fields').item.json.messageType }}",
+                    "rightValue": "documentMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "documentMessage"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -4432,
+        1200
+      ],
+      "id": "bae968ad-6f86-4916-83a6-e3d87b64258d",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "tableName": "n8n_chat_histories_tala",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        1552,
+        1392
+      ],
+      "id": "6eae6581-4035-49e8-a220-8671eb206c80",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "",
+          "name": "Postgres account n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chat-api",
+        "operation": "get-media-base64",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "messageId": "={{ $('data_fields').item.json.message_id }}"
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        -3568,
+        1616
+      ],
+      "id": "eb274afd-1389-4e8b-bc72-726e9c4e4612",
+      "name": "Obter m dia em base64",
+      "credentials": {
+        "evolutionApi": {
+          "id": "",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chat-api",
+        "operation": "read-messages",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "remoteJid": "={{ $('data_fields').item.json.from_id }}",
+        "messageId": "={{ $('data_fields').item.json.message_id }}"
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        2768,
+        752
+      ],
+      "id": "6664a078-1d4c-45ba-8e20-03bda189a048",
+      "name": "Marcar mensagens como lidas",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "resource": "messages-api",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "remoteJid": "={{ $('data_fields').item.json.from_id }}",
+        "messageText": "={{ $('message').item.json.output.replace(/\\\\n/g, '\\n')  \n        .replace(/\\\\\\\\n/g, '\\n')}}",
+        "options_message": {}
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        3872,
+        992
+      ],
+      "id": "1562cb53-85ab-401e-8676-8fb8618e9112",
+      "name": "Enviar texto",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chat-api",
+        "operation": "read-messages",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "remoteJid": "={{ $('data_fields').item.json.from_id }}",
+        "messageId": "={{ $('data_fields').item.json.message_id }}"
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        48
+      ],
+      "id": "a99ed05a-8f51-4fa8-9ee8-e2a0c115ef78",
+      "name": "Marcar mensagens como lidas1",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "messages-api",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "remoteJid": "={{ $('data_fields').item.json.from_id }}",
+        "messageText": "no entendi tu mensaje, me lo puedes repetir",
+        "options_message": {}
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        2512,
+        16
+      ],
+      "id": "7d85b61b-7857-46f2-9d29-7df4f9d5d554",
+      "name": "Enviar texto1",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6406b055-16d6-4064-8bb9-7fd36cf03646",
+              "name": "concat_message",
+              "value": "={{ $json.reactionMessage }}",
+              "type": "string"
+            },
+            {
+              "id": "56dd29b5-3298-4cee-8293-7ac484d99eab",
+              "name": "sessionId",
+              "value": "={{ $('data_fields').item.json.from_id }}",
+              "type": "string"
+            },
+            {
+              "id": "951fda8b-a072-4c2b-a837-4382a081c43d",
+              "name": "etiqueta",
+              "value": "={{ $('etiquetas').item.json.etiqueta }}",
+              "type": "string"
+            },
+            {
+              "id": "5cc96266-1808-4549-8334-8bbeaa99c636",
+              "name": "etiquetas_contacto",
+              "value": "={{$('label_contacto').item.json.payload}}",
+              "type": "string"
+            },
+            {
+              "id": "d7598de6-269b-410c-872b-8d2422c989b0",
+              "name": "name",
+              "value": "={{ $('datos_conversacion').item.json.meta.sender.name }}",
+              "type": "string"
+            },
+            {
+              "id": "e72cb80a-58a2-4354-a47a-15d914684bec",
+              "name": "number",
+              "value": "={{ $('data_fields').item.json.number }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        368,
+        1920
+      ],
+      "id": "6ff7d6bf-c9fc-4321-9ca5-fa27ec711db8",
+      "name": "final_data1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ec413817-9885-43ed-9d2a-0f84b6aba658",
+              "leftValue": "={{ $('data_fields').item.json.participant }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -5104,
+        1360
+      ],
+      "id": "9238e366-a1ed-429d-976b-1357210303f8",
+      "name": "If4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        416,
+        1136
+      ],
+      "id": "a08dbf95-7bcf-47a4-81ce-a0d290f25263",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "toolDescription": "si en la conversacion desean hablar con un ser humano, ejecuta esta herramienta",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.chatwoot }}/api/v1/accounts/1/conversations/{{$('data_fields').item.json.chatwootConversationId}}/custom_attributes",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"custom_attributes\": {\n    \"agente\": \"off\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        3744,
+        2192
+      ],
+      "id": "a9f281e0-c0c9-4927-b6d0-66eb0d185af7",
+      "name": "atencion_personalizada",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "KBiwLDTl5XYaAttl",
+          "name": "chatwoot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7911b4ec-21c4-45b4-bcba-befdcd2d6b6c",
+              "leftValue": "={{ $('data_fields').item.json.fromMe }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -5536,
+        1264
+      ],
+      "id": "540b1df4-86a8-4f92-9e99-214c49ca364f",
+      "name": "Filter1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('data_fields').item.json.chatwoot }}/api/v1/accounts/{{$('data_fields').item.json.chatwoot_id}}/conversations/{{ $('data_fields').item.json.chatwootConversationId }}/labels",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -5984,
+        1248
+      ],
+      "id": "e687461a-6d44-43f1-b035-c678db04b92e",
+      "name": "labels",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "vQ01IdilFEid3qo4",
+          "name": "chatwoot_oz"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "faed764e-6278-4118-a990-b74e8e8331e3",
+              "name": "etiquetas",
+              "value": "={{ $('labels').item.json.payload }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -5280,
+        1216
+      ],
+      "id": "27c38d49-a732-4de7-9602-be637695af7a",
+      "name": "etiquetas"
+    },
+    {
+      "parameters": {
+        "toolDescription": "si en la conversacion preguntan por promociones",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.chatwoot }}/api/v1/accounts/3/conversations/{{$('data_fields').item.json.chatwootConversationId}}/custom_attributes",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"custom_attributes\": {\n    \"agente\": \"promociones\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        3520,
+        2128
+      ],
+      "id": "5bfa2a25-faae-49e4-927f-889c283f4d78",
+      "name": "promociones",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "KBiwLDTl5XYaAttl",
+          "name": "chatwoot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://chatwoot.srv899715.hstgr.cloud/api/v1/accounts/3/conversations/{{$('data_fields').item.json.chatwootConversationId}}/custom_attributes",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"custom_attributes\": {\n    \"agente\": \"desactivado\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3680,
+        2080
+      ],
+      "id": "f7bfb814-108e-4b2a-b4a1-955c65ca3da6",
+      "name": "HTTP Request1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "KBiwLDTl5XYaAttl",
+          "name": "chatwoot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://chatwoot.srv899715.hstgr.cloud/api/v1/accounts/3/conversations/{{$('data_fields').item.json.chatwootConversationId}}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3088,
+        1936
+      ],
+      "id": "1f1d7ded-8b86-44ed-91a5-7ca42591d870",
+      "name": "conversacion_datos",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "KBiwLDTl5XYaAttl",
+          "name": "chatwoot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "messages-api",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "remoteJid": "5219513622636@s.whatsapp.net",
+        "messageText": "={{ $json.meta.sender.name }} te envio un archivo PDF o imagen, favor de activar el agente cuando terminen",
+        "options_message": {}
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        -2880,
+        1936
+      ],
+      "id": "e564f033-9319-4614-bb2b-fb9d4ce50f9e",
+      "name": "Enviar texto2",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $('data_fields').item.json.chatwoot }}/api/v1/accounts/{{$('data_fields').item.json.chatwoot_id}}/conversations/{{$('data_fields').item.json.chatwootConversationId}}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -7488,
+        1200
+      ],
+      "id": "7d7772f1-c1d3-476e-ac23-031260e96333",
+      "name": "datos_conversacion",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "vQ01IdilFEid3qo4",
+          "name": "chatwoot_oz"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $('data_fields').item.json.chatwoot }}/api/v1/accounts/{{$('data_fields').item.json.chatwoot_id}}/contacts/{{ $('datos_conversacion').item.json.meta.sender.id }}/labels",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -6400,
+        1088
+      ],
+      "id": "cc392baa-b987-4049-8200-3671cf2db2fa",
+      "name": "label_contacto",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "vQ01IdilFEid3qo4",
+          "name": "chatwoot_oz"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "integrations-api",
+        "operation": "evolution-bot",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "resourceForEvolutionBot": "changeStatusEvolutionBot",
+        "evolutionBotId": "={{ $json.data.key.id }}",
+        "remoteJid": "={{ $json.data.key.remoteJid }}",
+        "status": "closed"
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        4160,
+        992
+      ],
+      "id": "b4f18606-bb30-468e-9cca-e3e4be5331f2",
+      "name": "close sesion",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "integrations-api",
+        "operation": "evolution-bot",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "resourceForEvolutionBot": "changeStatusEvolutionBot",
+        "evolutionBotId": "={{ $json.data.key.id }}",
+        "remoteJid": "={{ $json.data.key.remoteJid }}",
+        "status": "closed"
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        -2224,
+        2144
+      ],
+      "id": "99fdc7c9-1fde-45fc-a39d-f2bafe9b8105",
+      "name": "close sesion1",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "integrations-api",
+        "operation": "evolution-bot",
+        "instanceName": "={{ $('data_fields').item.json.instance }}",
+        "resourceForEvolutionBot": "changeStatusEvolutionBot",
+        "evolutionBotId": "={{ $json.data.key.id }}",
+        "remoteJid": "={{ $json.data.key.remoteJid }}",
+        "status": "closed"
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        0
+      ],
+      "id": "5b3ccf87-09ff-4c26-a2ff-156272a53fef",
+      "name": "close sesion2",
+      "credentials": {
+        "evolutionApi": {
+          "id": "FpBL40dtcPPaa6cK",
+          "name": "grova"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2128,
+        48
+      ],
+      "id": "f441cf56-b3cc-4e3c-9212-7498704daff7",
+      "name": "Wait2",
+      "webhookId": "047fb1dd-8421-4394-a85e-f0b779c18d51"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -2672,
+        1936
+      ],
+      "id": "ee1177b3-4b35-409d-9fb2-5bbd776af0ba",
+      "name": "Wait3",
+      "webhookId": "79f2ebfb-e826-4b50-bf2f-aef9cd710401"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Obtiene las categorías de servicios disponibles en la clínica.\n\nCUÁNDO USAR:\nCuando el usuario pregunta por los servicios, tratamientos o precios disponibles. Ejemplos: “¿Qué tratamientos tienen?”, “Muéstrame los servicios faciales”, “¿Qué ofrecen?”.\n\nENTRADA JSON ESPERADA:\n{\n      \"search\": \"texto opcional de búsqueda\"\n}\n\nINSTRUCCIONES DE USO:\n- Usa este tool para listar categorías antes de buscar servicios o agendar citas.\n- El campo `search` es opcional y permite filtrar por texto (por ejemplo “facial” o “corporal”).\n- El valor de `commerce_id` siempre será **1**, no necesita enviarse desde la IA.\n\nSALIDA ESPERADA:\nUna lista JSON con las categorías disponibles, por ejemplo:\n[\n      { \"id\": 1, \"name\": \"Tratamientos Faciales\" },\n  { \"id\": 2, \"name\": \"Tratamientos Corporales\" }\n]",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/get_categories",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "search",
+              "value": "={{ $fromAI('search', `campo opcional`, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        672,
+        2032
+      ],
+      "id": "52fc4b1e-dbf3-4e8c-b0bd-9991ce37cc8e",
+      "name": "get_categories",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Obtiene los productos disponibles en la clínica.\n\nCUÁNDO USAR:\nCuando el usuario pregunta por productos específicos o después de seleccionar una categoría.\n\nBODY JSON:\n{\n  \"search\": \"crema\",\n  \"category\": \"nombre_categoría\"\n}\n\nPARÁMETROS:\n- search (opcional): Texto para buscar productos específicos.\n- category (opcional): Nombre de categoría (de get_categories).\n- commerce_id: Siempre 1, se envía automáticamente.\n\nEJEMPLO RESPUESTA:\n[\n  {\"id\": 10, \"name\": \"Crema Anti-edad\", \"price\": 500}\n]\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/get_products",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "search",
+              "value": "={{ $fromAI('search', ``, 'string') }}"
+            },
+            {
+              "name": "category",
+              "value": "={{ $fromAI('category', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        784,
+        2016
+      ],
+      "id": "5528d594-d5db-4eb3-85d4-f1e75249d59e",
+      "name": "get_products",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Busca si un paciente ya existe en el sistema por teléfono.\n\nCUÁNDO USAR:\nSiempre antes de crear una cita o al inicio de una conversación.\n\nBODY JSON:\n{\n  \"phone\": \"9516076162\"\n}\n\nPARÁMETROS:\n- phone (obligatorio): Solo 10 dígitos sin 521.\n\nEJEMPLO RESPUESTA:\n{\"id\": 125, \"first_name\": \"Juan\", \"last_name\": \"Pérez\", \"phone\": \"9516076162\"}\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/find_patient",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $fromAI('phone', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        912,
+        2016
+      ],
+      "id": "1241bc60-90e0-45b7-a9ef-17eab1175844",
+      "name": "find_patient",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Crea un nuevo paciente en el sistema.\n\nCUÁNDO USAR:\nCuando find_patient no encuentra al paciente.\n\nBODY JSON:\n{\n  \"first_name\": \"Juan\",\n  \"last_name\": \"Pérez García\",\n  \"phone\": \"9516076162\"\n}\n\nPARÁMETROS:\n- first_name (obligatorio): Nombre del paciente.\n- last_name (obligatorio): Apellidos del paciente.\n- phone (obligatorio): Teléfono de 10 dígitos.\n- commerce_id: Siempre 1, se envía automáticamente.\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/create_patient",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $fromAI('first_name', ``, 'string') }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $fromAI('last_name', ``, 'string') }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $fromAI('phone', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        992,
+        2128
+      ],
+      "id": "c5c26e60-e69c-4c66-9440-676c04a67c9e",
+      "name": "create_patient",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Crea una nueva cita en el sistema.\n\nCUÁNDO USAR:\nDespués de verificar disponibilidad y tener todos los datos.\n\nBODY JSON:\n{\n  \"name\": \"Bótox Full Face\",\n  \"description\": \"Cita creada vía WhatsApp. Paciente: Juan Pérez. Teléfono: 9516076162\",\n  \"patient_id\": 125,\n  \"service_id\": 39,\n  \"start_at\": \"15-10-2025 11:00\"\n}\n\nPARÁMETROS:\n- name (obligatorio): Título de la cita.\n- description (obligatorio): Descripción con info del paciente.\n- patient_id (obligatorio): ID de find_patient o create_patient.\n- service_id (obligatorio): ID de get_services.\n- start_at (obligatorio): Fecha y hora DD-MM-YYYY HH:MM.\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/create_appointment",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "service_id",
+              "value": "={{ $fromAI('service_id', ``, 'string') }}"
+            },
+            {
+              "name": "patient_id",
+              "value": "={{ $fromAI('patient_id', ``, 'string') }}"
+            },
+            {
+              "name": "start_at",
+              "value": "={{ $fromAI('start_at', ``, 'string') }}"
+            },
+            {
+              "name": "name",
+              "value": "={{ $fromAI('appointment_name', ``, 'string') }}"
+            },
+            {
+              "name": "description",
+              "value": "={{ $fromAI('description', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        2016
+      ],
+      "id": "2360a92b-3460-4881-843e-8253223a4a09",
+      "name": "create_appointment",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Modifica la fecha y hora de una cita existente.\n\nCUÁNDO USAR:\nCuando el usuario quiere reprogramar una cita.\n\nBODY JSON:\n{\n  \"appointment_id\": 221,\n  \"start_at\": \"16-10-2025 15:00\"\n}\n\nPARÁMETROS:\n- appointment_id (obligatorio): ID de la cita.\n- start_at (obligatorio): Nueva fecha y hora.\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/modify_appointment",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "appointment_id",
+              "value": "={{ $fromAI('appointment_id', ``, 'string') }}"
+            },
+            {
+              "name": "start_at",
+              "value": "={{ $fromAI('start_at', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        464,
+        2192
+      ],
+      "id": "ea3a2543-9597-4de8-b0dd-21ed64312db1",
+      "name": "modify_appointment",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Cancela una cita específica.\n\nCUÁNDO USAR:\nCuando el usuario desea cancelar una cita.\n\nBODY JSON:\n{\n  \"appointment_id\": 249\n}\n\nPARÁMETROS:\n- appointment_id (obligatorio): ID de la cita.\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/cancel_appointment",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "appointment_id",
+              "value": "={{ $fromAI('appointments_id', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        640,
+        2192
+      ],
+      "id": "d785a9b2-530f-404b-855f-8ff8181c55b7",
+      "name": "cancel_appointment",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Verifica disponibilidad para un día completo sin servicio específico.\n\nBODY JSON:\n{\n  \"start_at\": \"15-10-2025\"\n}\n\nPARÁMETROS:\n- start_at (obligatorio): Fecha en formato DD-MM-YYYY.\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/availability_day",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "start_at",
+              "value": "={{ $fromAI('start_at', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        928,
+        2224
+      ],
+      "id": "38c9eefa-0622-46a8-a815-05829ec07562",
+      "name": "availability_day",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Verifica disponibilidad de un servicio en una fecha específica.\n\nBODY JSON:\n{\n  \"service_id\": 39,\n  \"start_at\": \"15-10-2025\"\n}\n\nPARÁMETROS:\n- service_id (obligatorio)\n- start_at (obligatorio)\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/availability_service",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "start_at",
+              "value": "={{ $fromAI('start_at', ``, 'string') }}"
+            },
+            {
+              "name": "service_id",
+              "value": "={{ $fromAI('service_id', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        976,
+        2160
+      ],
+      "id": "eeaefc2c-9858-4fec-bae9-8de3bdabcd94",
+      "name": "availability_service",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Verifica si una hora específica está disponible sin servicio.\n\nBODY JSON:\n{\n  \"start_at\": \"15-10-2025 11:00\"\n}\n\nPARÁMETROS:\n- start_at (obligatorio): Fecha y hora en formato DD-MM-YYYY HH:MM.\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/availability_day_hour",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "start_at",
+              "value": "={{ $fromAI('start_at', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        992,
+        2304
+      ],
+      "id": "c9a2ada1-62de-4209-9ac9-de5e1efe99db",
+      "name": "availability_day_hour",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Verifica si una fecha, hora y servicio específico están disponibles.\n\nCUÁNDO USAR:\nCuando el usuario ya tiene servicio, fecha y hora específicos.\n\nBODY JSON:\n{\n  \"service_id\": 39,\n  \"start_at\": \"15-10-2025 11:00\"\n}\n\nPARÁMETROS:\n- start_at (obligatorio): Formato DD-MM-YYYY HH:MM\n- service_id (obligatorio): ID de get_services\n\n\n\nEJEMPLO RESPUESTA (disponible):\n{\"available\": true, \"service\": \"Bótox Full Face\", \"start_at\": \"15-10-2025 11:00\"}\n\nEJEMPLO RESPUESTA (no disponible):\n{\"available\": false, \"alternative_slots\": [\"15-10-2025 10:00\", \"15-10-2025 14:00\"]}",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/availability_service_hour",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "service_id",
+              "value": "={{ $fromAI('service_id', ``, 'string') }}"
+            },
+            {
+              "name": "start_at",
+              "value": "={{ $fromAI('start_at', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1344,
+        2192
+      ],
+      "id": "a485c903-2358-45ce-ad37-7f472e4fcf2d",
+      "name": "availability_service_hour",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "nvía notificaciones automáticas por WhatsApp mediante la API de Grova. Puede utilizarse para alertas, solicitudes de atención personalizada, avisos del sistema o cualquier mensaje generado en el flujo. Recibe dinámicamente el número destino y el texto del mensaje.",
+        "method": "POST",
+        "url": "https://gateway.grova.mx/message/sendText/grova",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "X/y8N8BPQX7Z0lQFcJAHMR7+RmFlSkWQQKd40fmTkLk="
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "=5219512016663"
+            },
+            {
+              "name": "text",
+              "value": "={{ $fromAI('message', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        3360,
+        2144
+      ],
+      "id": "10ddcaa0-4d3a-4331-ad2d-a43c2a9d0c73",
+      "name": "notificar"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Busca y lista los servicios disponibles en la clínica según una categoría específica.\n\nCUÁNDO USAR:\nCuando el usuario menciona o selecciona una categoría.\nEjemplos:\n- \"Muéstrame los servicios de botox\"\n- \"Qué tratamientos faciales tienen?\"\n\nBODY JSON:\n{\n  \"category\": \"nombre de la categoría\"\n}\n\nPARÁMETROS:\n- category (obligatorio): Nombre de la categoría (de get_categories).\n- commerce_id: Siempre 1, se envía automáticamente.\n\nEJEMPLO RESPUESTA:\n[\n  {\"id\": 12, \"name\": \"Bótox Full Face\", \"description\": \"Tratamiento facial...\", \"price\": 1200},\n  {\"id\": 13, \"name\": \"Bótox Frontal\", \"description\": \"Tratamiento parcial...\", \"price\": 800}\n]\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/get_services",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "category",
+              "value": "={{ $fromAI('category', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        864,
+        2448
+      ],
+      "id": "1999ba84-9599-405c-8e7a-6c23d1c1f214",
+      "name": "services_by_category",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Busca servicios por nombre o palabra clave.\n\nCUÁNDO USAR:\nCuando el usuario menciona o pregunta por un servicio específico.\nEjemplos:\n- \"Tienen botox?\"\n- \"Qué tratamientos para la piel ofrecen?\"\n- \"Quiero agendar limpieza facial\"\n\nBODY JSON:\n{\n  \"search\": \"botox\"\n}\n\nPARÁMETROS:\n- search (obligatorio): Nombre del servicio o palabra clave.\n- commerce_id: Siempre 1, se envía automáticamente.\n\nEJEMPLO RESPUESTA:\n[\n  {\"id\": 39, \"name\": \"Bótox Full Face\", \"price\": 1200},\n  {\"id\": 40, \"name\": \"Bótox Frontal\", \"price\": 800}\n]\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/get_services",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "search",
+              "value": "={{ $fromAI('search', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1056,
+        2480
+      ],
+      "id": "caabfecd-8749-4ce2-8dd5-e02e627fcd97",
+      "name": "service_by_name",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Obtiene todas las citas registradas de un paciente específico usando su nombre.\n\nCUÁNDO USAR:\nCuando el usuario menciona su nombre y desea consultar, reprogramar o cancelar citas.\n\nBODY JSON:\n{\n  \"patient_name\": \"Oswaldo Neri Valdez\"\n}\n\nPARÁMETROS:\n- patient_name (obligatorio): Nombre completo del paciente.\n- commerce_id: Siempre 1, se envía automáticamente.\n\nEJEMPLO RESPUESTA:\n[\n  {\"id\": 221, \"name\": \"Bótox Full Face\", \"start_at\": \"15-10-2025 11:00\", \"status\": \"confirmed\"},\n  {\"id\": 222, \"name\": \"Limpieza Facial\", \"start_at\": \"20-10-2025 14:00\", \"status\": \"confirmed\"}\n]\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/get_appointments",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "patient_name",
+              "value": "={{ $fromAI('patient_name', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1232,
+        2448
+      ],
+      "id": "0a4dc314-1486-4439-82fe-fd91bfc28da4",
+      "name": "get_appointments_by_patient_name",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Obtiene todas las citas de un paciente específico usando su ID.\n\nCUÁNDO USAR:\nDespués de obtener el ID del paciente desde find_patient o create_patient.\n\nBODY JSON:\n{\n  \"patient_id\": 125\n}\n\nPARÁMETROS:\n- patient_id (obligatorio): ID del paciente obtenido previamente.\n- commerce_id: Siempre 1, se envía automáticamente.\n\nEJEMPLO RESPUESTA:\n[\n  {\"id\": 221, \"name\": \"Bótox Full Face\", \"start_at\": \"15-10-2025 11:00\", \"status\": \"confirmed\"},\n  {\"id\": 222, \"name\": \"Limpieza Facial\", \"start_at\": \"20-10-2025 14:00\", \"status\": \"confirmed\"}\n]\n",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/get_appointments",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "patient_id",
+              "value": "={{ $fromAI('patient_id', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1504,
+        1984
+      ],
+      "id": "af5ef746-af4f-4cf1-8303-398438e7df30",
+      "name": "get_appointments_by_patient_id",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Obtiene la disponibilidad de un profesional o comercio dentro de un rango de fechas, opcionalmente filtrando por servicio.\n\nCUÁNDO USAR:\nCuando el usuario desea conocer las fechas y horarios disponibles entre dos fechas específicas.\n\nBODY JSON:\n{\n  \"commerce_id\": 1,\n  \"service_id\": 39,\n  \"start_date\": \"2025-11-10\",\n  \"end_date\": \"2025-11-15\"\n}\n\nPARÁMETROS:\n- user_id_or_commerce_id (obligatorio): ID del profesional o del comercio.\n- service_id (opcional): ID del servicio (de la lista get_services).\n- start_date (obligatorio): Fecha de inicio del rango (YYYY-MM-DD).\n- end_date (obligatorio): Fecha final del rango (YYYY-MM-DD).\n\nEJEMPLO RESPUESTA (disponibilidad encontrada):\n{\n  \"success\": true,\n  \"range\": [\"2025-11-10\", \"2025-11-15\"],\n  \"availability\": [\n    {\n      \"fecha\": \"2025-11-11\",\n      \"disponibles\": [\n        {\"start\": \"10:00\", \"end\": \"12:00\"},\n        {\"start\": \"14:00\", \"end\": \"16:00\"}\n      ]\n    },\n    {\n      \"fecha\": \"2025-11-12\",\n      \"disponibles\": [\n        {\"start\": \"09:00\", \"end\": \"13:00\"}\n      ]\n    }\n  ],\n  \"message\": \"Fechas disponibles encontradas.\"\n}\n\nEJEMPLO RESPUESTA (sin disponibilidad):\n{\n  \"success\": true,\n  \"range\": [\"2025-11-10\", \"2025-11-15\"],\n  \"availability\": [],\n  \"message\": \"No se encontraron horarios disponibles en el rango seleccionado.\"\n}",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/availability_range",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "service_id",
+              "value": "={{ $fromAI('service_id', '', 'number') }}"
+            },
+            {
+              "name": "start_date",
+              "value": "={{ $fromAI('start_date', '', 'string') }}"
+            },
+            {
+              "name": "end_date",
+              "value": "={{ $fromAI('end_date', '', 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1904,
+        1760
+      ],
+      "id": "8e65037e-2efe-4f99-b123-c5ee7d5a7a43",
+      "name": "availability_range",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Busca la próxima fecha y hora disponible para un servicio o profesional.\n\nCUÁNDO USAR:\nCuando el usuario desea agendar y necesita saber la siguiente fecha disponible.\n\nBODY JSON:\n{\n  \"commerce_id\": 1,\n  \"service_id\": 39,\n  \"from_date\": \"2025-10-15\"\n}\n\nPARÁMETROS:\n- user_id_or_commerce_id (obligatorio): ID del profesional o comercio.\n- service_id (opcional): ID del servicio.\n- from_date (opcional): Fecha desde la cual buscar (formato YYYY-MM-DD).\n\nEJEMPLO RESPUESTA (disponible):\n{\"success\": true, \"next_available\": {\"date\": \"2025-10-16\", \"time\": \"09:00\"}}\n\nEJEMPLO RESPUESTA (sin disponibilidad):\n{\"success\": false, \"message\": \"No se encontró disponibilidad en las próximas semanas.\"}",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/next_available",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "commerce_id",
+              "value": "={{ $('data_fields').item.json.commerce_id }}"
+            },
+            {
+              "name": "service_id",
+              "value": "={{ $fromAI('service_id', ``, 'string') }}"
+            },
+            {
+              "name": "from_date",
+              "value": "={{ $fromAI('from_date', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        2304,
+        1760
+      ],
+      "id": "6670ebdd-e33f-4187-a70c-f2ddbb340d6b",
+      "name": "availability_next_available",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Confirma la cita más cercana al día siguiente para un paciente según su número telefónico.\n\nCUÁNDO USAR:\nCuando el usuario responde con la palabra 'confirmar' y se desea registrar la confirmación automáticamente.\n\nBODY JSON:\n{\n  \"phone\": \"+52 5544332211\",\n  \"current_date\": \"2025-11-09\"\n}\n\nPARÁMETROS:\n- phone (obligatorio): Número de teléfono del paciente. Puede incluir prefijos (+52, espacios o guiones).\n- current_date (obligatorio): Fecha actual del sistema o del mensaje recibido (YYYY-MM-DD).\n\nEJEMPLO RESPUESTA (confirmación exitosa):\n{\n  \"status\": \"success\",\n  \"message\": \"✅ Cita confirmada para el 10/11/2025 15:00\",\n  \"appointment\": {\n    \"id\": 87,\n    \"service\": \"Tratamiento facial\",\n    \"patient_id\": 12,\n    \"start_at\": \"2025-11-10 15:00:00\",\n    \"status\": \"confirmado\"\n  }\n}\n\nEJEMPLO RESPUESTA (sin cita):\n{\n  \"status\": \"no_appointment\",\n  \"message\": \"No se encontró ninguna cita pendiente para el día siguiente.\"\n}",
+        "method": "POST",
+        "url": "={{ $('data_fields').item.json.calendary }}/api/mpc/appointments/confirm",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "phone",
+              "value": "={{ $fromAI('phone', '', 'string') }}"
+            },
+            {
+              "name": "current_date",
+              "value": "={{ $fromAI('current_date', '', 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        2464,
+        2304
+      ],
+      "id": "4c11d7c0-2bcd-4d12-ab83-fa7fb786320d",
+      "name": "confirm_appointment_next_day",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "gw1jUbrD4SelrfVy",
+          "name": "Calendary"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4a1d0f11-609b-4d1c-921a-fae9a295c7f0",
+              "leftValue": "={{ $('datos_conversacion').item.json.custom_attributes['agente']  || 'on' }}",
+              "rightValue": "on",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -7008,
+        1184
+      ],
+      "id": "0cdedb87-94dd-4bc2-9c8c-670e5e6eb820",
+      "name": "If5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -6448,
+        1392
+      ],
+      "id": "22ee5fee-6a56-42c8-982f-eae613401f92",
+      "name": "No Operation, do nothing3"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "flow.grova.mx",
+            "user-agent": "axios/1.12.2",
+            "content-length": "1751",
+            "accept": "application/json, text/plain, */*",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "flow.grova.mx",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "dc5ccc26d05a",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event": "messages.upsert",
+            "instance": "grova",
+            "data": {
+              "key": {
+                "remoteJid": "5219512016663@s.whatsapp.net",
+                "remoteJidAlt": "144212150501471@lid",
+                "fromMe": false,
+                "id": "3EB0BDA48F8C7931953539",
+                "participant": "",
+                "addressingMode": "pn"
+              },
+              "pushName": "Oswaldo",
+              "status": "DELIVERY_ACK",
+              "message": {
+                "messageContextInfo": {
+                  "deviceListMetadata": {
+                    "senderKeyIndexes": [],
+                    "recipientKeyIndexes": [],
+                    "senderKeyHash": {
+                      "0": 173,
+                      "1": 229,
+                      "2": 93,
+                      "3": 169,
+                      "4": 93,
+                      "5": 2,
+                      "6": 18,
+                      "7": 149,
+                      "8": 140,
+                      "9": 24
+                    },
+                    "senderTimestamp": {
+                      "low": 1765644628,
+                      "high": 0,
+                      "unsigned": true
+                    },
+                    "senderAccountType": 0,
+                    "receiverAccountType": 0,
+                    "recipientKeyHash": {
+                      "0": 5,
+                      "1": 105,
+                      "2": 19,
+                      "3": 241,
+                      "4": 66,
+                      "5": 93,
+                      "6": 72,
+                      "7": 49,
+                      "8": 166,
+                      "9": 59
+                    },
+                    "recipientTimestamp": {
+                      "low": 1764118270,
+                      "high": 0,
+                      "unsigned": true
+                    }
+                  },
+                  "deviceListMetadataVersion": 2,
+                  "messageSecret": {
+                    "0": 5,
+                    "1": 166,
+                    "2": 80,
+                    "3": 235,
+                    "4": 97,
+                    "5": 134,
+                    "6": 115,
+                    "7": 249,
+                    "8": 221,
+                    "9": 197,
+                    "10": 121,
+                    "11": 249,
+                    "12": 166,
+                    "13": 192,
+                    "14": 55,
+                    "15": 103,
+                    "16": 28,
+                    "17": 175,
+                    "18": 86,
+                    "19": 65,
+                    "20": 235,
+                    "21": 239,
+                    "22": 39,
+                    "23": 105,
+                    "24": 81,
+                    "25": 61,
+                    "26": 138,
+                    "27": 211,
+                    "28": 87,
+                    "29": 121,
+                    "30": 136,
+                    "31": 135
+                  },
+                  "limitSharingV2": {
+                    "trigger": 0,
+                    "initiatedByMe": false
+                  }
+                },
+                "conversation": "oswaldo neri valdez"
+              },
+              "contextInfo": {
+                "mentionedJid": [],
+                "groupMentions": [],
+                "ephemeralSettingTimestamp": {
+                  "low": 1765486192,
+                  "high": 0,
+                  "unsigned": false
+                },
+                "disappearingMode": {
+                  "initiator": 0,
+                  "trigger": 1,
+                  "initiatedByMe": false
+                }
+              },
+              "messageType": "conversation",
+              "messageTimestamp": 1765659019,
+              "instanceId": "dfc26f1a-6724-4699-8e20-76e646dc8a7a",
+              "source": "web",
+              "chatwootMessageId": 13733,
+              "chatwootInboxId": 1,
+              "chatwootConversationId": 57
+            },
+            "destination": "https://flow.grova.mx/webhook/tala",
+            "date_time": "2025-12-13T17:50:19.603Z",
+            "sender": "5219516076162@s.whatsapp.net",
+            "server_url": "https://gateway.grova.mx",
+            "apikey": "EBB72990669E-42A6-B320-AD682D5DD244"
+          },
+          "webhookUrl": "https://flow.grova.mx/webhook/tala",
+          "executionMode": "production"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "data_fields": {
+      "main": [
+        [
+          {
+            "node": "datos_conversacion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "final_message_text": {
+      "main": [
+        [
+          {
+            "node": "Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "final_message_voice": {
+      "main": [
+        [
+          {
+            "node": "Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get_buffer_data": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buffer": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "trascription_audio_to_text": {
+      "main": [
+        [
+          {
+            "node": "final_message_voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get_buffer_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis": {
+      "main": [
+        [
+          {
+            "node": "final_data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "final_data": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "data_fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "trascription_audio_to_text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "message": {
+      "main": [
+        [
+          {
+            "node": "Marcar mensagens como lidas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Enviar texto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "final_message_text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "final_message_text",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Obter m dia em base64",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "final_data1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Marcar mensagens como lidas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obter m dia em base64": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marcar mensagens como lidas": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marcar mensagens como lidas1": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "final_data1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atencion_personalizada": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        [
+          {
+            "node": "etiquetas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "labels": {
+      "main": [
+        [
+          {
+            "node": "Filter1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "etiquetas": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "promociones": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "conversacion_datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "conversacion_datos": {
+      "main": [
+        [
+          {
+            "node": "Enviar texto2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "datos_conversacion": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "label_contacto": {
+      "main": [
+        [
+          {
+            "node": "labels",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar texto1": {
+      "main": [
+        [
+          {
+            "node": "close sesion2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar texto": {
+      "main": [
+        [
+          {
+            "node": "close sesion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar texto2": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Enviar texto1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "close sesion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_categories": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_products": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "find_patient": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_patient": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create_appointment": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "modify_appointment": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cancel_appointment": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "availability_day": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "availability_service": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "availability_day_hour": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "availability_service_hour": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "notificar": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "services_by_category": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "service_by_name": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_appointments_by_patient_name": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get_appointments_by_patient_id": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "availability_range": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "availability_next_available": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "confirm_appointment_next_day": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "label_contacto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "bc682a99-a001-4fde-b070-08e47f58c5b6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "821fb54795c80905a139f9fab4a8caaa2a7d3876a3282d65751af22944b56fe0"
+  },
+  "id": "qU40uKHsnRy7Lctu",
+  "tags": [
+    {
+      "updatedAt": "2025-08-13T17:36:01.960Z",
+      "createdAt": "2025-08-13T17:36:01.960Z",
+      "id": "3a3V2WCoxhaUNfH2",
+      "name": "whatsapp"
+    }
+  ]
+}
