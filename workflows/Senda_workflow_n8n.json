@@ -50,7 +50,7 @@
             {
               "id": "4be8a3eb-8fc2-4d34-8c94-b31c423ad726",
               "name": "url",
-              "value": "http://168.231.69.210:8080/message/sendText/beland",
+              "value": "http://{evolution-api-url}/message/sendText/{instancia}",
               "type": "string"
             },
             {
